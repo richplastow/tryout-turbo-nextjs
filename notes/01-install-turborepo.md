@@ -32,7 +32,7 @@ README:
 npx create-turbo@latest -e with-tailwind
 # Need to install the following packages:
 # create-turbo@2.0.3
-# Ok to proceed? (y) 
+# Ok to proceed? (y)
 y
 # npm WARN deprecated inflight@1.0.6: ...
 # npm WARN deprecated rimraf@3.0.2: ...
@@ -42,11 +42,22 @@ y
 # ? Where would you like to create your turborepo? (./my-turborepo)
 ./my-turborepo
 # ? Which package manager do you want to use? (Use arrow keys)
-# ❯ npm workspaces 
+# ❯ npm workspaces
 #   - pnpm workspaces (not installed)
-#   yarn workspaces 
+#   yarn workspaces
 #   - bun workspaces (beta) (not installed)
-npm workspaces 
+npm workspaces
+# Downloading files for example with-tailwind. This might take a moment.
+# >>> Created a new Turborepo with the following:
+# apps
+#  - apps/docs
+#  - apps/web
+# packages
+#  - packages/config-eslint
+#  - packages/config-tailwind
+#  - packages/config-typescript
+#  - packages/ui
+# Installing packages. This might take a couple of minutes.
 
 ```
 

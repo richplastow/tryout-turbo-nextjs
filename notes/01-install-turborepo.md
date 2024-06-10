@@ -81,6 +81,10 @@ on disk) for 26,208 items.
 
 ## Move the generated Turbo monorepo files to the top level
 
+> Moving the contents of my-turborepo/ to the top level will allow Vercel's
+> 'Configure Project' page to detect the 'docs' and 'web' apps correctly.
+> See [Step 2: Deploy to Vercel.](./02-deploy-to-vercel.md)
+
 I deleted ` "name": "with-tailwind",` from the my-turborepo/packages.json file,
 and added some info near the top:
 
@@ -96,7 +100,7 @@ and added some info near the top:
 ```
 
 ```bash
-mv my-turborepo/README.md notes/02-turborepo-tailwind-starter-readme.md
+mv my-turborepo/README.md notes/appendix-1-turborepo-tailwind-starter-readme.md
 mv my-turborepo/* . # move visible...
 mv my-turborepo/.[!.]* . # ...and invisible items
 rmdir my-turborepo

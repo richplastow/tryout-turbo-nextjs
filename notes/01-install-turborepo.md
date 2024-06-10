@@ -79,17 +79,42 @@ On my macOS, the new my-turborepo/ folder is 348,971,971 bytes (426.3 MB on
 disk) for 26,276 items. Its node_modules/ folder is 348,747,864 bytes (425.9 MB
 on disk) for 26,208 items.
 
+## Move the generated Turbo monorepo files to the top level
+
+I deleted ` "name": "with-tailwind",` from the my-turborepo/packages.json file,
+and added some info near the top:
+
+```json
+{
+  "name": "tryout-turbo-nextjs",
+  "version": "0.0.1",
+  "description": "Exploring multiple Next.js apps in a Turborepo monorepo",
+  "author": "Rich Plastow",
+  "private": false,
+  ...
+}
+```
+
+```bash
+mv my-turborepo/README.md notes/02-turborepo-tailwind-starter-readme.md
+mv my-turborepo/* . # move visible...
+mv my-turborepo/.[!.]* . # ...and invisible items
+rmdir my-turborepo
+```
+
+Note that the preexisting top-level .gitignore has now been modified, but the
+preexisting LICENSE, README.md and notes/ remain unchanged.
+
 ## Check that `dev` is working
 
 ```bash
-cd my-turborepo
 npm run dev
 # > dev
 # > turbo dev
 # Attention:
 # Turborepo now collects completely anonymous telemetry regarding usage.
 # This information is used to shape the Turborepo roadmap and prioritize features.
-# You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+# You can learn more, including how to opt-out if you'd not like to participate...
 # https://turbo.build/repo/docs/telemetry
 # • Packages in scope: @repo/eslint-config, @repo/tailwind-config, @repo/typescript-config, @repo/ui, docs, web
 # • Running dev in 6 packages
@@ -137,6 +162,8 @@ Visit <http://localhost:3000> to see the default turborepo page showing
 "examples/with-tailwind - web", and <http://localhost:3001> to see it showing
 "examples/with-tailwind - docs".
 
+`[ctrl-c]` to stop `npm run dev`.
+
 ## Check that `lint` is working
 
 ```bash
@@ -157,8 +184,8 @@ npm run lint
 # ...
 ```
 
-After a short wait, the interactive TUI will quit, reporting that there are no
-lint problems.
+After a short wait, the interactive TUI will quit, reporting that there are
+`✔ No ESLint warnings or errors`
 
 ## Check that `build` is working
 
@@ -215,11 +242,6 @@ npm run build
 #                  │                                                                                               │
 #                  └Use arrow keys to navigate. Press `Enter` to interact with a task and `Ctrl-Z` to stop interact┘
 ```
-
-On my macOS, the new my-turborepo/ folder has grown to 442,781,402 bytes
-(523.6 MB on disk) for 26,278 items (invisible files add to bytes and disk size,
-but not number of items). Its node_modules/ folder is unchanged on 348,747,864
-bytes (425.9 MB on disk) for 26,208 items.
 
 ## Serve one of the newly built apps, locally
 

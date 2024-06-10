@@ -1,5 +1,9 @@
 {
-  "private": true,
+  "name": "tryout-turbo-nextjs",
+  "version": "0.0.1",
+  "description": "Exploring multiple Next.js apps in a Turborepo monorepo",
+  "author": "Rich Plastow",
+  "private": false,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -18,7 +22,6 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "with-tailwind",
   "packageManager": "npm@10.1.0",
   "workspaces": [
     "apps/*",

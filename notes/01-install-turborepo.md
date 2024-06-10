@@ -221,3 +221,19 @@ On my macOS, the new my-turborepo/ folder has grown to 442,781,402 bytes
 but not number of items). Its node_modules/ folder is unchanged on 348,747,864
 bytes (425.9 MB on disk) for 26,208 items.
 
+## Serve one of the newly built apps, locally
+
+```bash
+cd apps/docs
+npm start
+# > docs@1.0.0 start
+# > next start
+#   ▲ Next.js 14.2.3
+#   - Local:        http://localhost:3000
+#  ✓ Starting...
+#  ✓ Ready in 647ms
+```
+
+Visit <http://localhost:3000> to see the default turborepo page showing
+"examples/with-tailwind - docs". In the 'Network' developer tab you should see
+15 '200' GET requests.

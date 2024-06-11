@@ -2,8 +2,8 @@
 
 [^ Notes](./00-notes.md)
 
-> _“Turbo is an incremental bundler and build system optimized for JavaScript_
-> _and TypeScript, written in Rust.”_ - <https://turbo.build/>
+> “Turbo is an incremental bundler and build system optimized for JavaScript
+> and TypeScript, written in Rust.” - <https://turbo.build/>
 
 ## Install `turbo` globally
 
@@ -19,8 +19,7 @@ turbo --version
 
 ## Install `with-tailwind`, the Next.js + Tailwind starter
 
-Turbo publishes a [list of recommended starters,](
-https://turbo.build/repo/docs/getting-started/installation#start-with-an-example)
+Turbo publishes a [list of recommended starters,](https://turbo.build/repo/docs/getting-started/installation#start-with-an-example)
 and several use the Next.js React framework. I had encountered issues trying to
 use Tailwind with `@nx/vite` and `@nx/next` (Nx is an alternative monorepo), so
 I was interested to see if Turbo's Tailwind worked any better.

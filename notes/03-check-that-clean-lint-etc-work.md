@@ -49,7 +49,12 @@ npm run lint
 # └────>
 ```
 
-No files are changed by this script. TODO break something and check that `lint` fixes it
+No files are changed by this script.
+
+Add an unused import to the top of the apps/docs/src/app/layout.tsx file, eg
+`import { createPortal } from 'react-dom';` and re-run `npm run lint` to check
+that a "'createPortal' is defined but never used" error appears. Note that
+VS Code's IntelliSense highlights this error too.
 
 ## Check that `type-check` works
 
@@ -82,6 +87,11 @@ npm run type-check
 
 No problems with TypeScript types.
 
+Add an incorrect type to the apps/docs/src/app/layout.tsx file, eg
+`const title : number = "Create Turborepo";` and re-run `npm run type-check` to
+check that a "Type 'string' is not assignable to type 'number'" error appears.
+Note that VS Code's IntelliSense highlights this error too.
+
 ## Check that `format` works
 
 This actually runs `prettier`, under the hood.
@@ -113,3 +123,8 @@ npm run format
 ```
 
 The only files that needed to be formatted were Markdown, in notes/.
+
+Change one of the string is apps/docs/src/app/layout.tsx file from double-quote
+to single-quote, eg `import '@repo/ui/styles.css';` and re-run `npm run format`
+to check that the quotes are changed back again. Note that VS Code's
+IntelliSense does not highlight this as a problem.
